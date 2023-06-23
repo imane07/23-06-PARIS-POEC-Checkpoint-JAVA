@@ -1,11 +1,12 @@
 import java.sql.Time;
+import java.util.Date;
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         // Création du cinéma
-        Cinema cinema = new Cinema("Cineplex", "123 Rue de Cinema");
-        System.out.println("Cinema created: " + cinema);
+        Cinema cinema = new Cinema("Cineplex", "123 Rue de Cinema.java");
+        System.out.println("Cinema.java created: " + cinema);
 
         // Création des place
         List<String> places = new ArrayList<>();
@@ -50,8 +51,8 @@ public class Main {
         System.out.println("Seances created: " + seance1 + ", " + seance2);
 
         // Programmation des séances au cinéma
-        cinema.scheduleSeance(film1, new Date(), new Time(), salle1);
-        cinema.scheduleSeance(film2, new Date(), new Time(), salle2);
+        cinema.scheduleSeance(film1, new Date(), new Time(1), salle1);
+        cinema.scheduleSeance(film2, new Date(), new Time(2), salle2);
         System.out.println("Seances scheduled in the cinema.");
 
         // Récupération de la liste de films du cinéma
@@ -76,14 +77,15 @@ public class Main {
         }
 
         // Bonus: Création d'une place et vérification de sa disponibilité
-        List<Place> places = new ArrayList<>();
-        String[] rows = {"A", "B", "C", "D", "E", "F", "G"};
-        for(String row : rows) {
+        List<Place> places1 = new ArrayList<>();
+        String[] rows1 = {"A", "B", "C", "D", "E", "F", "G"};
+        for(String row : rows1) {
             for(int i = 1; i <= 10; i++) {
-                places.add(new Place(row + i));
+                places1.add(new Place(row + i));
             }
         }
 
+        Place place1 = places1.get(0);
         place1.isOccupied.put(seance1, true);
         System.out.println("Place created and set as occupied for the seance: " + place1);
 

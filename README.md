@@ -21,7 +21,7 @@ Il doit y avoir des méthodes pour :
 
 Un `Film` a un nom, un synopsis, et une date de sortie.
 
-### Séance
+### Seance
 
 Une `Seance` a un `Film`, une date, une heure, une `Salle`, et une liste de `Reservation`s.
 
